@@ -27,7 +27,7 @@ const useStyles = makeStyles({
     flex: 1,
     alignItems: "center"
   },
-  top:{
+  top: {
     margin: 50
   }
 });
@@ -52,47 +52,47 @@ export default function Cards() {
   }
   return (
     <div className={classes.top}>
-      <Button size="large" color="primary" variant="contained" onClick={()=> history.push("/createPost")}>Create New Post</Button>
-    <Grid container spacing={3}>
-      {blogs.map((posts, key) => (
-        <Grid item xs={3} className={classes.root} key={key}>
-          <Card>
-            <CardActionArea>
-              <CardMedia
-                className={classes.media}
-                image={image}
-                title="Contemplative Reptile"
-              />
+      <Button size="large" color="primary" variant="contained" onClick={() => history.push("/createPost")}>Create New Post</Button>
+      <Grid container spacing={3}>
+        {blogs.map((posts, key) => (
+          <Grid item xs={3} className={classes.root} key={key}>
+            <Card>
+              <CardActionArea>
+                <CardMedia
+                  className={classes.media}
+                  image={image}
+                  title="Contemplative Reptile"
+                />
 
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                  {posts.title.slice(0, 15)}...
-                </Typography>
-                <Typography className={classes.description}>
-                  {/* {console.log(listItems)} */}
-                  {posts.body.slice(0, 50)}...
-                </Typography>
-              </CardContent>
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    {posts.title.slice(0, 15)}...
+                  </Typography>
+                  <Typography className={classes.description}>
+                    {/* {console.log(listItems)} */}
+                    {posts.body.slice(0, 50)}...
+                  </Typography>
+                </CardContent>
 
-            </CardActionArea>
+              </CardActionArea>
 
-            <CardActions>
-              {/* <Button size="small" color="primary" 
+              <CardActions>
+                {/* <Button size="small" color="primary" 
               // onClick={() => getId(posts.id)}
               >
 
                 Read More...
               </Button> */}
-              <Link to={`/posts/${posts.id}`}>Read More...</Link>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <Button size="large" color="secondary" onClick={() => handleDelete(posts.id)}>Delete</Button>
-            </CardActions>
+                <Link to={`/posts/${posts.id}`}>Read More...</Link>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <Button size="large" color="secondary" onClick={() => handleDelete(posts.id)}>Delete</Button>
+              </CardActions>
 
-          </Card>
+            </Card>
 
-        </Grid>
-      ))}
-    </Grid>
+          </Grid>
+        ))}
+      </Grid>
     </div>
   );
 }

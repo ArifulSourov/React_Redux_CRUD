@@ -17,10 +17,10 @@ function App() {
     <div className={classes.root}>
       <Router>
         <Switch>
-        <Route path="/" exact component={Container} />
-        <Route path="/createPost" exact component={CreatePost} />
-        <Route path="/posts/:postId" exact component={IndividualPost} />
-        <Route>404 Not Found</Route>
+          <Route path="/" exact component={Container} />
+          <Route path="/createPost" exact component={CreatePost} />
+          <Route path="/posts/:postId" exact component={IndividualPost} />
+          <Route>404 Not Found</Route>
         </Switch>
       </Router>
     </div>

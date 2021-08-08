@@ -63,7 +63,7 @@ const IndividualPost = () => {
         if (postId && postId !== "") fetchBlogDetails();
         return () => {
             dispatch(removeSelectedBlog());
-          };
+        };
     }, [postId])
     const classes = useStyles();
     return (

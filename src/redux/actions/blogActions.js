@@ -16,9 +16,9 @@ export const selectedBlog = (blog) => {
 
 export const removeSelectedBlog = () => {
     return {
-      type: ActionTypes.REMOVE_SELECTED_BLOGS,
+        type: ActionTypes.REMOVE_SELECTED_BLOGS,
     };
-  };
+};
 
 
 export const deleteBlog = () => {

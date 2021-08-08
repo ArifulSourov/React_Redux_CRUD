@@ -48,10 +48,10 @@ export default function CreatePost() {
                 .catch((error) => {
                     console.log(error)
                 })
-                dispatch(addBlog())
-                history.push("/")
+            dispatch(addBlog())
+            history.push("/")
         }
-        
+
 
 
     }

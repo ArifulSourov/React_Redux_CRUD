@@ -6,8 +6,8 @@ const initialState = {
 }
 
 
-export const blogReducer = (state= initialState, {type, payload}) => {
-    switch (type){
+export const blogReducer = (state = initialState, { type, payload }) => {
+    switch (type) {
         case ActionTypes.SET_BLOGS:
             return { ...state, blogs: payload }
         case ActionTypes.DELETE_BLOGS:
@@ -15,12 +15,12 @@ export const blogReducer = (state= initialState, {type, payload}) => {
         case ActionTypes.ADD_BLOGS:
             return { ...state }
         default:
-            return state 
+            return state
     }
 }
 
 
-export const selectedBlogReducer = (state={}, {type, payload}) => {
+export const selectedBlogReducer = (state = {}, { type, payload }) => {
     switch (type) {
         case ActionTypes.SELECTED_BLOGS:
             return { ...state, ...payload }
