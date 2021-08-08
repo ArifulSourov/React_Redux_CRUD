@@ -49,8 +49,9 @@ export default function CreatePost() {
                     console.log(error)
                 })
                 dispatch(addBlog())
+                history.push("/")
         }
-        history.push("/")
+        
 
 
     }

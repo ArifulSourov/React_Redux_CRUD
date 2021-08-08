@@ -6,7 +6,7 @@ import Cards from './Cards';
 import { makeStyles } from '@material-ui/core/styles';
 import { useDispatch, useSelector } from "react-redux"
 import axios from "axios"
-import { setBlogs } from "../redux/actions/blogActions"
+import { getBlogs } from "../redux/actions/blogActions"
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -22,7 +22,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function MainContainer() {
     const classes = useStyles();
-    // const blogs = useSelector((state => state.allBlogs.blogs) )
     const blogs = useSelector((state) => state);
     const dispatch = useDispatch();
     const url = `https://jsonplaceholder.typicode.com/posts`;
@@ -33,21 +32,12 @@ export default function MainContainer() {
             .catch((err) => {
                 console.log(err, "err")
             })
-        dispatch(setBlogs(response.data))
-        // try {
-        //   const response = await fetch(url);
-        //   const json = await response.json();
-        //   //console.log(json);
-        //   setPosts(json);
-        // } catch (error) {
-        //   console.log("error", error);
-        // }
+        dispatch(getBlogs(response.data))
     };
 
     useEffect(() => {
         fetchData();
     }, []);
-    // console.log(blogs, "Blogs")
 
     return (
         <React.Fragment>

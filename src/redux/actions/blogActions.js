@@ -1,6 +1,6 @@
 // import axios from "axios"
 import { ActionTypes } from "../constants/action-types"
-export const setBlogs = (blogs) => {
+export const getBlogs = (blogs) => {
     return {
         type: ActionTypes.SET_BLOGS,
         payload: blogs
