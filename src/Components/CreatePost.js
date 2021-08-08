@@ -3,8 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { useHistory } from 'react-router';
-import { useSelector, useDispatch } from "react-redux"
-import { createPost } from '../redux/actions/blogActions';
+import { useDispatch } from "react-redux"
+import { addBlog } from '../redux/actions/blogActions';
 import axios from 'axios';
 // import axios from 'axios'
 
@@ -42,16 +42,13 @@ export default function CreatePost() {
             setError("please fill all the infos")
         }
         else {
-            // dispatch(createPost(state))
-            // history.push("/")
-            // setError("")
             console.log(state)
             axios
                 .post(`https://jsonplaceholder.typicode.com/posts`, state)
-                .then((res) => {
-                    console.log("res", res)
+                .catch((error) => {
+                    console.log(error)
                 })
-                .catch((error) => console.log(error))
+                dispatch(addBlog())
         }
         history.push("/")
 

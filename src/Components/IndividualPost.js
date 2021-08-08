@@ -11,6 +11,9 @@ import Typography from '@material-ui/core/Typography';
 import image from '../assets/pic.jpg'
 import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Button from '@material-ui/core/Button';
+import { useHistory } from 'react-router';
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -26,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
         flex: '1 0 auto',
     },
     cover: {
-        width: 700,
+        width: 1000,
         height: 800
     },
     controls: {
@@ -43,6 +46,7 @@ const useStyles = makeStyles((theme) => ({
 
 const IndividualPost = () => {
     const blog = useSelector(state => state.blog)
+    const history = useHistory()
     const { postId } = useParams();
     const dispatch = useDispatch()
     console.log(blog)
@@ -84,6 +88,7 @@ const IndividualPost = () => {
                                 {blog.body}
                             </Typography>
                         </CardContent>
+                        <Button size="large" color="secondary" variant="contained" onClick={() => history.push("/")}>Back to Home</Button>
                     </div>
                 </Card>
 
